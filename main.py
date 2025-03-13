@@ -1,11 +1,11 @@
 import click
 from models import Account, Password, session
 
-# Helper function to find an account by name
+# function to find an account by name
 def get_account(name):
     return session.query(Account).filter_by(name=name).first()
 
-# Helper function to add a new password
+# function to add a new password
 def add_password(account_name, password):
     account = get_account(account_name)
     if account:
